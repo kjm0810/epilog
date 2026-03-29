@@ -88,15 +88,17 @@ export default function WorkList({ hot_work_list }: { hot_work_list: HotWorkList
 
     isDragging.current = false;
   };
-  
+
   if (!list.length) return null;
 
-  const extended: Work[] = [
-    list[list.length - 1],
-    ...list,
-    list[0],
-  ];
-
+  const extended: Work[] | null =
+    list.length > 0
+      ? [
+          list[list.length - 1]!,
+          ...list,
+          list[0]!,
+        ]
+      : null;
   return (
     <div
       className="carousel"
@@ -110,7 +112,7 @@ export default function WorkList({ hot_work_list }: { hot_work_list: HotWorkList
           transition: isTransition ? '0.4s ease' : 'none',
         }}
       >
-        {extended.map((item: Work, i: number) => {
+        {extended?.map((item: Work, i: number) => {
           const realIndex =
             i === 0 ? list.length - 1 :
             i === extended.length - 1 ? 0 :

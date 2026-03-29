@@ -221,7 +221,7 @@ export default function Popup() {
 
       onClear();
 
-      if (pathname.startsWith('/work/detail/')) {
+      if (pathname?.startsWith('/work/detail/')) {
         router.refresh();
       }
     } finally {

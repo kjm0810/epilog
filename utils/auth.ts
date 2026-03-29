@@ -104,6 +104,11 @@ export function verifyAccessToken(token: string): JwtPayload | null {
     }
 
     const [header, payload, signature] = parts;
+
+    if (!header || !payload || !signature) {
+        return null;
+    }
+
     const unsigned = `${header}.${payload}`;
 
     const expected = base64UrlEncode(

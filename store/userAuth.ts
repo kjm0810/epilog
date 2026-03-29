@@ -29,14 +29,15 @@ type UserAuthState = {
 let initAuthInFlight: Promise<void> | null = null;
 let refreshUserInFlight: Promise<AuthUser | null> | null = null;
 
-function getCookie(name: string): string | null {
-  if (typeof document === 'undefined') {
-    return null;
-  }
+function getCookie(name: string): string | undefined {
+  if (typeof document === "undefined") return;
 
-  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const match = document.cookie.match(new RegExp(`(?:^|; )${escaped}=([^;]*)`));
-  return match ? decodeURIComponent(match[1]) : null;
+  const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const match = document.cookie.match(
+    new RegExp(`(?:^|; )${escaped}=([^;]*)`)
+  );
+
+  return match?.[1] ? decodeURIComponent(match[1]) : undefined;
 }
 
 function setCookie(name: string, value: string, maxAgeSeconds: number): void {
