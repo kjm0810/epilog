@@ -1,0 +1,41 @@
+{
+  // ===== 기본 =====
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "files.autoSave": "off",
+
+  // ===== Prettier =====
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.singleQuote": true,
+  "prettier.semi": true,
+  "prettier.tabWidth": 2,
+  "prettier.trailingComma": "all",
+  "prettier.printWidth": 100,
+
+  // ===== ESLint =====
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+
+  // ===== TypeScript =====
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "typescript.preferences.importModuleSpecifier": "relative",
+
+  // ===== Error Lens =====
+  "errorLens.enabled": true,
+  "errorLens.fontSize": "12px",
+  "errorLens.messageEnabled": true,
+
+  // ===== 파일 정리 =====
+  "explorer.compactFolders": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // ===== 보기 =====
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true
+}

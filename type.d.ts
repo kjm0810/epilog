@@ -1,0 +1,16 @@
+type Work = {
+    work_index: number,
+    type: string,
+    name: string,
+    writer: string,
+    genre: string | null,
+    introduce: string | null,
+    img_url: string | null,
+    platform_id: number,
+    update_weekend: string | null,
+    status: string | null,
+    link: string | null,
+    review_count?: number,
+    rating_avg?: number,
+    bookmark_count?: number,
+}
