@@ -6,12 +6,13 @@ type SearchPageProps = {
     };
 };
 
-export default function SearchPage({ searchParams }: SearchPageProps) {
-    const keywordRaw = searchParams?.q;
+export default async function SearchPage({ searchParams }: SearchPageProps) {
+    const keywordRaw = await searchParams;
     const keyword =
-        (Array.isArray(searchParams?.q)
-            ? searchParams?.q?.[0]
-            : searchParams?.q) ?? "";
+        (Array.isArray(keywordRaw?.q)
+            ? keywordRaw?.q?.[0]
+            : keywordRaw?.q) ?? "";
+
 
     return <SearchWorks key={keyword} keyword={keyword} />;
 }

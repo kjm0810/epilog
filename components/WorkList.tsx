@@ -131,6 +131,7 @@ export default function WorkList({ hot_work_list }: { hot_work_list: HotWorkList
               key={`${item.work_index}-${i}`}
               ref={i === 1 ? itemRef : null}
               className={`work-item ${isActive ? 'active' : ''}`}
+              draggable="false"
             >
               <div className="left">
                 <img src={imageSrc} alt={`${item.name} 썸네일`} />
